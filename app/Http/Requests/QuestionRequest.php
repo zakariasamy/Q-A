@@ -26,7 +26,6 @@ class QuestionRequest extends FormRequest
         return [
             'title' => 'required|string|min:12|max:150',
             'body' => 'required|string|min:12',
-            'rate' => 'required|string|min:12',
         ];
     }
 }
