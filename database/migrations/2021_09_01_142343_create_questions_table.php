@@ -17,7 +17,7 @@ class CreateQuestionsTable extends Migration
             $table->id();
             $table->string('title');
             $table->text('body');
-            $table->integer('rate');
+            $table->integer('rate')->default(0);
             $table->timestamps();
         });
     }

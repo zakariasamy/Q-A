@@ -17,6 +17,7 @@ class CreateAnswersTable extends Migration
             $table->id();
             $table->text('answer');
             $table->foreignId('question_id');
+            $table->integer('rate')->default(0);
             $table->timestamps();
 
 

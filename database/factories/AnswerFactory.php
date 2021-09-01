@@ -25,6 +25,7 @@ class AnswerFactory extends Factory
         return [
             'answer' => $this->faker->sentence(200),
             'question_id' => $this->faker->numberBetween(1, Question::count()),
+            'rate' => $this->faker->randomDigit,
             'created_at' => now(),
             'updated_at' => Null,
         ];

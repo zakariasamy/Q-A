@@ -21,4 +21,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::prefix('questions')->group(function(){
     Route::get('', [QuestionController::class, 'all']);
+    Route::post('', [QuestionController::class, 'create']);
+    Route::post('', [QuestionController::class, 'delete']);
 });
