@@ -7,6 +7,8 @@ trait QuestionTrait {
 
 
     public static function rate($id, $status = 'up'){
+        $flag = 0;
+
         $question = Question::where('id', $id)->first();
 
         if(!$question)
@@ -18,9 +20,12 @@ trait QuestionTrait {
         else if($status == 'down' && $oldrate > 0){
             $question->rate = $question->rate -1;
         }
+        else if($status == 'down' && $oldrate == 0)
+            $flag = 1;
 
-        if($oldrate > 0)
+        if(!$flag)
             $question->save();
+
 
         return $question;
     }
